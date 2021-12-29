@@ -60,7 +60,7 @@ namespace TechJobsOO
             {
                 EmployerLocation.Value = "Data not available";
             }
-            if (JobType == null ||JobType.Value == "")
+            if (JobType == null || JobType.Value == "")
             {
                 JobType.Value = "Data not available";
             }
@@ -68,15 +68,11 @@ namespace TechJobsOO
             {
                 JobCoreCompetency.Value = "Data not available";
             }
-            else if (Name == null && EmployerName == null && EmployerLocation == null && JobType == null && JobCoreCompetency == null)
+            else if ((Name == null || Name == "" || Name == "Data not available") && (EmployerName == null || EmployerName.Value == "" || EmployerName.Value == "Data not available") && (EmployerLocation == null || EmployerLocation.Value == "" || EmployerLocation.Value == "Data not available") && (JobType == null || JobType.Value == "" || JobType.Value == "Data not available") && (JobCoreCompetency == null || JobCoreCompetency.Value == "" || JobCoreCompetency.Value == "Data not available"))
             {
                 return $"OOPS! This job does not seem to exsist!";
             }
-            else
-            {
-                return $"ID: {Id} \nName: {Name} \nEmployer: {EmployerName} \nLocation: {EmployerLocation} \nPosition Type: {JobType} \nCore Competency: {JobCoreCompetency}\n";
-            }
-            return ToString();
+            return $"ID: ___{Id}___ \nName: ___{Name}___ \nEmployer: ___{EmployerName}___ \nLocation: ___{EmployerLocation}___ \nPosition Type: ___{JobType}___ \nCore Competency: ___{JobCoreCompetency}___\n";
         }
     }
 }
