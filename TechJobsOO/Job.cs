@@ -48,6 +48,10 @@ namespace TechJobsOO
 
         public override string ToString()
         {
+            if ((Name == null || Name == "" || Name == "Data not available") && (EmployerName == null || EmployerName.Value == "" || EmployerName.Value == "Data not available") && (EmployerLocation == null || EmployerLocation.Value == "" || EmployerLocation.Value == "Data not available") && (JobType == null || JobType.Value == "" || JobType.Value == "Data not available") && (JobCoreCompetency == null || JobCoreCompetency.Value == "" || JobCoreCompetency.Value == "Data not available"))
+            {
+                return $"OOPS! This job does not seem to exist!";
+            }
             if (Name == null || Name == "")
             {
                 Name = "Data not available";
@@ -67,10 +71,6 @@ namespace TechJobsOO
             if (JobCoreCompetency == null || JobCoreCompetency.Value == "")
             {
                 JobCoreCompetency.Value = "Data not available";
-            }
-            else if ((Name == null || Name == "" || Name == "Data not available") && (EmployerName == null || EmployerName.Value == "" || EmployerName.Value == "Data not available") && (EmployerLocation == null || EmployerLocation.Value == "" || EmployerLocation.Value == "Data not available") && (JobType == null || JobType.Value == "" || JobType.Value == "Data not available") && (JobCoreCompetency == null || JobCoreCompetency.Value == "" || JobCoreCompetency.Value == "Data not available"))
-            {
-                return $"OOPS! This job does not seem to exsist!";
             }
             return $"ID: ___{Id}___ \nName: ___{Name}___ \nEmployer: ___{EmployerName}___ \nLocation: ___{EmployerLocation}___ \nPosition Type: ___{JobType}___ \nCore Competency: ___{JobCoreCompetency}___\n";
         }
