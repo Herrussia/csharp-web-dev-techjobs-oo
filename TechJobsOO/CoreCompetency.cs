@@ -15,21 +15,21 @@ namespace TechJobsOO
             nextId++;
         }*/
 
-        public CoreCompetency(string value) : base(value)
+/*        public CoreCompetency(string value) : base(value)
         {
             //Value = value;
-        }
+        }*/
 
         public override bool Equals(object obj)
         {
             return obj is CoreCompetency competency &&
                 Id == competency.Id;
         }
-
+/*
         public override int GetHashCode()
         {
             return HashCode.Combine(Id);
-        }
+        }*/
 
         public override string ToString()
         {

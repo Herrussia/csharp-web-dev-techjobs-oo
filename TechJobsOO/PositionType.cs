@@ -13,11 +13,11 @@ namespace TechJobsOO
             nextId++;
         }*/
 
-        public PositionType(string value) : base(value)
+/*        public PositionType(string value) : base(value)
         {
             //Value = value;
         }
-
+*/
         // TODO: Add custom Equals(), GetHashCode(), and ToString() methods.
 
         public override bool Equals(object obj)
