@@ -72,7 +72,7 @@ namespace TechJobsOO
             {
                 JobCoreCompetency.Value = "Data not available";
             }
-            return $"ID: {Id} \nName: {Name} \nEmployer: {EmployerName} \nLocation: {EmployerLocation} \nPosition Type: {JobType} \nCore Competency: {JobCoreCompetency}\n";
+            return $"\nID: {Id} \nName: {Name} \nEmployer: {EmployerName} \nLocation: {EmployerLocation} \nPosition Type: {JobType} \nCore Competency: {JobCoreCompetency}\n";
         }
     }
 }

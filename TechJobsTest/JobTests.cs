@@ -11,7 +11,7 @@ namespace TechJobsTest
         {
             Job jobOne = new Job();
             Job jobTwo = new Job();
-            Assert.IsFalse(jobOne.Id == jobTwo.Id);
+            Assert.IsTrue(jobOne.Id +1 == jobTwo.Id);
         }
 
         [TestMethod]
@@ -37,11 +37,13 @@ namespace TechJobsTest
         public void TestToString()
         {
             Job jobThree = new Job("Web Developer", new Employer("LaunchCode"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("JavaScript"));
-            Assert.AreNotEqual("ID: ___6___ \nName: ___Web Developer___ \nEmployer: ___LaunchCode___ \nLocation: ___St. Louis___ \nPosition Type: ___Front-end developer___ \nCore Competency: ___JavaScript___\n", jobThree.ToString());
+            Assert.AreEqual("\nID: 6 \nName: Web Developer \nEmployer: LaunchCode \nLocation: St. Louis \nPosition Type: Front-end developer \nCore Competency: JavaScript\n", jobThree.ToString());
             Job job3 = new Job("Ice cream tester", new Employer(""), new Location("Home"), new PositionType("UX"), new CoreCompetency("Tasting ability"));
-            Assert.AreEqual("ID: 7 \nName: Ice cream tester \nEmployer: Data not available \nLocation: Home \nPosition Type: UX \nCore Competency: Tasting ability\n", job3.ToString());
+            Assert.AreEqual("\nID: 7 \nName: Ice cream tester \nEmployer: Data not available \nLocation: Home \nPosition Type: UX \nCore Competency: Tasting ability\n", job3.ToString());
             Job jobEmpty = new Job();
             Assert.AreEqual("OOPS! This job does not seem to exist!", jobEmpty.ToString());
+            Assert.IsTrue(jobThree.ToString().StartsWith("\n"));
+            Assert.IsTrue(jobThree.ToString().EndsWith("\n"));
         }
     }
 }
