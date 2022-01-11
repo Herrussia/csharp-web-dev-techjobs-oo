@@ -11,7 +11,7 @@ namespace TechJobsTest
         {
             Job jobOne = new Job();
             Job jobTwo = new Job();
-            Assert.AreNotEqual(jobOne, jobTwo);
+            Assert.IsFalse(jobOne.Id == jobTwo.Id);
         }
 
         [TestMethod]
@@ -42,7 +42,6 @@ namespace TechJobsTest
             Assert.AreEqual("ID: 7 \nName: Ice cream tester \nEmployer: Data not available \nLocation: Home \nPosition Type: UX \nCore Competency: Tasting ability\n", job3.ToString());
             Job jobEmpty = new Job();
             Assert.AreEqual("OOPS! This job does not seem to exist!", jobEmpty.ToString());
-            //"OOPS! This Job does not seem to exist!" bonus test
         }
     }
 }
